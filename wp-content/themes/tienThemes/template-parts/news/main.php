@@ -1,3 +1,30 @@
+  <?php
+    $args = array(
+        'posts_per_page' => 6,
+        'orderby'        => 'date',
+        'post_status'    => 'publish',
+        'order' => 'DESC',
+        'config' => [
+            'show_categories' => true,
+            'show_desc' => true
+        ],
+        'tax_query' => array(
+            'relation' => 'AND',
+            [
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => ['news'],
+            ],
+            [
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => ['thought-leadership'],
+            ],
+        )
+    );
+    $query = new WP_Query($args);
+
+    ?>
   <section class="section_main">
       <div class="box-link">
           <ul>
@@ -53,196 +80,53 @@
       <!-- row 2 -->
       <div class="row row2">
           <ul class="list_card">
-              <!-- 1 -->
-              <li class="card_item">
-                  <div class="card_img">
-                      <a href="">
-                          <img
-                              src="https://edugrowth.org.au/wp-content/uploads/2026/03/CEO-Syndicate-2026-02-Angela-Falkenberg-400x250.png"
-                              alt="" />
-                      </a>
-                  </div>
-                  <div class="card_content">
-                      <div class="light-heading">
-                          <a href="">News, Thought Leadership</a>
-                      </div>
-                      <div class="main-heading">
-                          CEO Syndicate: The Principal’s Perspective — What
-                      </div>
-                      <div class="card-desc">
-                          <p>
-                              A select group of EdTech CEOs and sector leaders recently
-                              came together for the first CEO Syndicate session of 2026:
-                              The Principal’s Perspective — What Will Shape Education in
-                              2026. The session featured Angela Falkenberg, President of
-                              the Australian Primary Principals...
-                          </p>
-                      </div>
+              <?php if ($query->have_posts()) : ?>
+                  <?php while ($query->have_posts()) : $query->the_post(); ?>
+                      <li class="card_item">
+                          <div class="card_img">
+                              <a href="<?php the_permalink(); ?>">
+                                  <?php if (has_post_thumbnail()) : ?>
+                                      <?php the_post_thumbnail('large'); ?>
+                                  <?php else : ?>
+                                      <img src="https://via.placeholder.com/400x250" alt="<?php the_title_attribute(); ?>">
+                                  <?php endif; ?>
+                              </a>
+                          </div>
+                          <div class="card_content">
+                              <div class="light-heading">
+                                  <?php
+                                    $categories = get_the_category();
+                                    if (!empty($categories)) {
+                                        $cat_links = array();
+                                        foreach ($categories as $category) {
+                                            $cat_links[] = '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                                        }
+                                        echo implode(', ', $cat_links);
+                                    }
+                                    ?>
+                              </div>
 
-                      <a href="" class="link--icon">LEARN MORE
-                          <i class="fas fa-arrow-circle-right"></i>
-                      </a>
-                  </div>
-              </li>
-              <!-- 2 -->
-              <li class="card_item">
-                  <div class="card_img">
-                      <a href="">
-                          <img
-                              src="https://edugrowth.org.au/wp-content/uploads/2025/11/Webinar-Series-4-400x250.png"
-                              alt="" />
-                      </a>
-                  </div>
-                  <div class="card_content">
-                      <div class="light-heading">
-                          <a href="">News, Thought Leadership</a>
-                      </div>
-                      <div class="main-heading">
-                          CEO Syndicate: The Principal’s Perspective — What
-                      </div>
-                      <div class="card-desc">
-                          <p>
-                              Selling to schools isn’t about having the best features.
-                              It’s not about persistent follow-ups.And it’s definitely
-                              not about a one-size-fits-all sales playbook.In
-                              partnership with the City of Melbourne, Julian Ridden
-                              unpacked the real mindset behind K–12 buying...
-                          </p>
-                      </div>
-                      <a href="" class="link--icon">LEARN MORE
-                          <i class="fas fa-arrow-circle-right"></i>
-                      </a>
-                  </div>
-              </li>
-              <!-- 3 -->
-              <li class="card_item">
-                  <div class="card_img">
-                      <a href="">
-                          <img
-                              src="https://edugrowth.org.au/wp-content/uploads/2025/12/Captura-de-pantalla-2025-12-10-a-las-9.03.48-a.m-e1765318201440-400x250.png"
-                              alt="" />
-                      </a>
-                  </div>
-                  <div class="card_content">
-                      <div class="light-heading">
-                          <a href="">News, Thought Leadership</a>
-                      </div>
-                      <div class="main-heading">
-                          CEO Syndicate: The Principal’s Perspective — What
-                      </div>
-                      <div class="card-desc">
-                          <p>
-                              ScopeAs we wrap up 2025, we want to extend our sincere
-                              thanks to every member of the EduGrowth community. Our
-                              work is only possible because of organisations and
-                              individuals like you—people who believe in building a
-                              stronger, more connected EdTech ecosystem. Looking...
-                          </p>
-                      </div>
-                      <a href="" class="link--icon">LEARN MORE
-                          <i class="fas fa-arrow-circle-right"></i>
-                      </a>
-                  </div>
-              </li>
-              <!-- 4 -->
-              <li class="card_item">
-                  <div class="card_img">
-                      <a href="">
-                          <img
-                              src="https://edugrowth.org.au/wp-content/uploads/2025/12/Strategic-Partnership-3-400x250.png"
-                              alt="" />
-                      </a>
-                  </div>
-                  <div class="card_content">
-                      <div class="light-heading">
-                          <a href="">News, Thought Leadership</a>
-                      </div>
-                      <div class="main-heading">
-                          CEO Syndicate: The Principal’s Perspective — What
-                      </div>
-                      <div class="card-desc">
-                          <p>
-                              EduGrowth is proud to announce the extension of its
-                              strategic partnership with the City of Melbourne,
-                              reinforcing a shared commitment to strengthening
-                              Victoria’s EdTech ecosystem through InformED, an
-                              initiative that brings together EdTech companies,
-                              educators,...
-                          </p>
-                      </div>
-                      <a href="" class="link--icon">LEARN MORE
-                          <i class="fas fa-arrow-circle-right"></i>
-                      </a>
-                  </div>
-              </li>
-              <!-- 5 -->
-              <li class="card_item">
-                  <div class="card_img">
-                      <a href="">
-                          <img
-                              src="https://edugrowth.org.au/wp-content/uploads/2025/12/A7R3606-400x250.jpg"
-                              alt="" />
-                      </a>
-                  </div>
-                  <div class="card_content">
-                      <div class="light-heading">
-                          <a href="">News, Thought Leadership</a>
-                      </div>
-                      <div class="main-heading">
-                          CEO Syndicate: The Principal’s Perspective — What
-                      </div>
-                      <div class="card-desc">
-                          <p>
-                              The rapid uptake of artificial intelligence in education
-                              has brought extraordinary possibilities for teaching,
-                              learning and institutional operations. Yet surrounded by
-                              enthusiasm for new platforms, pilots and digital tools, a
-                              crucial question remains easily...
-                          </p>
-                      </div>
+                              <div class="main-heading">
+                                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                              </div>
 
-                      <a href="" class="link--icon">LEARN MORE
-                          <i class="fas fa-arrow-circle-right"></i>
-                      </a>
-                  </div>
-              </li>
-              <!-- 6 -->
-              <li class="card_item">
-                  <div class="card_img">
-                      <a href="">
-                          <img
-                              src="https://edugrowth.org.au/wp-content/uploads/2025/11/Tania-Bucic-1-400x250.png"
-                              alt="" />
-                      </a>
-                  </div>
-                  <div class="card_content">
-                      <div class="light-heading">
-                          <a href="">News, Thought Leadership</a>
-                      </div>
-                      <div class="main-heading">
-                          CEO Syndicate: The Principal’s Perspective — What
-                      </div>
-                      <div class="card-desc">
-                          <p>
-                              How do EdTech leaders design experiences that are truly
-                              adaptive, evidence-informed and aligned with what
-                              educators and students actually need? That was the
-                              question at the heart of the latest Women's Education
-                              Leaders Syndicate, where Tania shared practical
-                              insights...
-                          </p>
-                      </div>
-                      <a href="" class="link--icon">LEARN MORE
-                          <i class="fas fa-arrow-circle-right"></i>
-                      </a>
-                  </div>
-              </li>
+                              <div class="card-desc">
+                                  <?php
+
+                                    ?>
+                              </div>
+
+                              <a href="<?php the_permalink(); ?>" class="link--icon">
+                                  LEARN MORE <i class="fas fa-arrow-circle-right"></i>
+                              </a>
+                          </div>
+                      </li>
+                  <?php endwhile;
+                    wp_reset_postdata(); ?>
+              <?php else : ?>
+              <?php endif; ?>
           </ul>
       </div>
-
-
-
-      <!-- row 3 -->
       <div class="row row3">
           <ul class="list_post">
               <!-- 1 -->
@@ -274,7 +158,6 @@
                       </a>
                   </div>
               </li>
-              <!-- 2 -->
               <li class="post_item">
                   <div class="post_img">
                       <a href="">
@@ -302,7 +185,6 @@
                       </a>
                   </div>
       </div>
-      <!-- row 4 -->
       <div class="row row4">
           <div class="box-left">
               <div class="box-wrapper">
@@ -336,10 +218,8 @@
           </div>
 
       </div>
-      <!-- row 5 -->
       <div class="row row5">
           <ul class="list_card">
-              <!-- 1 -->
               <li class="card_item">
                   <div class="card_img">
                       <a href="">
@@ -358,7 +238,6 @@
 
                   </div>
               </li>
-              <!-- 2 -->
               <li class="card_item">
                   <div class="card_img">
                       <a href="">
@@ -378,7 +257,6 @@
 
                   </div>
               </li>
-              <!-- 3 -->
               <li class="card_item">
                   <div class="card_img">
                       <a href="">
@@ -397,7 +275,6 @@
 
                   </div>
               </li>
-              <!-- 4 -->
               <li class="card_item">
                   <div class="card_img">
                       <a href="">
@@ -415,7 +292,6 @@
                       </a>
                   </div>
               </li>
-              <!-- 5 -->
               <li class="card_item">
                   <div class="card_img">
                       <a href="">
@@ -435,7 +311,6 @@
 
                   </div>
               </li>
-              <!-- 6 -->
               <li class="card_item">
                   <div class="card_img">
                       <a href="">

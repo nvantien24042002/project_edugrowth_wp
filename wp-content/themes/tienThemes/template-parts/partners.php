@@ -26,13 +26,9 @@ $partner_query = new WP_Query([
         <?php if ($partner_query->have_posts()):
             while ($partner_query->have_posts()): $partner_query->the_post();
                 $images = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                // echo "<pre>";
-                // print_r($images);
-                // echo "</pre>";
         ?>
                 <div class="list-item">
                     <a href="<?php echo the_permalink() ?>">
-
                         <img
                             src="<?php echo esc_url($images); ?>"
                             alt="" />
