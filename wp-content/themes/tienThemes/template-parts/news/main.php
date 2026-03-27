@@ -1,4 +1,7 @@
   <?php
+
+    $show_desc = !empty($config['show_desc']);
+    var_dump($show_desc);
     $args = array(
         'posts_per_page' => 6,
         'orderby'        => 'date',
@@ -9,7 +12,6 @@
             'show_categories' => true,
             'show_desc' => true
         ],
-        // 'category__not_in' => array(15),
         'tax_query' => array(
             'relation' => 'AND',
             [
@@ -25,7 +27,9 @@
         )
     );
     $query = new WP_Query($args);
-
+    echo "<pre>";
+    print_r($query);
+    echo "</pre>";
 
     ?>
   <section class="section_main">
