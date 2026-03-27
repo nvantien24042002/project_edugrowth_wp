@@ -61,5 +61,7 @@
 .section_events a:hover {
   color: var(--pink-hover);
 }
-
+.section_events p {
+  margin-top: 10px;
+}
 /* end section events */

@@ -850,6 +850,14 @@ section.section_strategic {
   padding: 27px 0px;
   text-align: center;
 }
+.section_strategic .box-content_home {
+  padding: 0px 300px;
+  text-align: center;
+}
+.section_strategic .box-view_member {
+  display: flex;
+  justify-content: flex-end;
+}
 .section_strategic h4 {
   font-size: 30px;
 }
@@ -866,13 +874,15 @@ section.section_strategic {
 
 .section_strategic .list-item img {
   object-fit: contain;
-  /* max-height: 100%; */
+  max-height: 5rem;
+  max-width: 8rem;
 }
 
 .section_strategic .list-item a {
   display: flex;
   justify-content: center;
   height: 100%;
+  align-items: center;
 }
 .section_strategic .list-item:hover {
   background: #fff;
@@ -1276,7 +1286,7 @@ section.strategic-partners i {
 
 .section_strategic .list-item {
   flex: 0 0 calc(25% - 30px);
-  height: 200px;
+  height: 100px;
   padding: 20px;
   /* background: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1); */

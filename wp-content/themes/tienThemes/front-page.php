@@ -38,7 +38,7 @@
     <?php get_template_part('template-parts/home/banner_1'); ?>
     <?php get_template_part('template-parts/home/focus'); ?>
     <?php get_template_part('template-parts/home/edTech_startups'); ?>
-    <?php get_template_part('template-parts/home/strategic_partners'); ?>
+    <?php get_template_part('template-parts/partners'); ?>
     <?php get_template_part('template-parts/home/banner_2'); ?>
     <?php get_template_part('template-parts/home/resources'); ?>
 

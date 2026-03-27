@@ -24,7 +24,7 @@ $events_query = new WP_Query($args);
     <section class="section_events">
         <div class="box-head">
             <div class="box-left">
-                <h3>EVENTS</h3>
+                <h3>UPCOMING EVENTS</h3>
                 <p></p>
             </div>
             <div class="box-right">

@@ -11,16 +11,17 @@
         'category_name' => 'market',
         'order' => 'DESC',
         'posts_per_page' => 9,
-        'category__not_in' => array(14, 12, 15, 5),
-
+        'category__not_in' => array(15, 13, 6, 12, 14, 5),
+        // 10
     );
     $arg2 = array(
         'post_title' => 'THOUGHT LEADERSHIP',
         'post_desc' => 'Explore key trends in education innovation and EdTech from leaders across education, hand-picked global innovators and the Australia EdTech ecosystem.',
         'category_name' => 'thought-leadership',
+        'orderby' => "DATE",
         'order' => 'DESC',
         'posts_per_page' => 6,
-        'category__not_in' => array(5, 15),
+        'category__not_in' => array(15, 13, 6, 10, 5),
     )
     ?>
     <?php get_template_part("template-parts/post", 'post', $arg1); ?>
