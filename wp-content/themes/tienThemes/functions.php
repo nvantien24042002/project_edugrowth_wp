@@ -267,20 +267,72 @@ add_shortcode('tienthemes_LaunchpadResource', 'tienthemes_LaunchpadResource_shor
 
 
 
-function tienthemes_loop_post_shortcode($attr)
+function tienthemes_get_posts_data($args = array())
 {
-    $attr = shortcode_atts(array(
-        'post_title' => '',
-        'post_desc' => '',
-        'category_name' => '',
-        'posts_per_page' => '',
-        'config' => [
+    $defaults = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 8,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'categories'     => array(),
+        'config'         => array(
             'show_categories' => false,
-            'show_desc' => false
-        ]
-    ), $attr);
-    ob_start();
-    get_template_part('template-parts/post', '', $attr);
-    return ob_get_clean();
+            'show_desc'       => false,
+        ),
+    );
+
+    $args = wp_parse_args($args, $defaults);
+
+    $args['config'] = wp_parse_args(
+        is_array($args['config']) ? $args['config'] : array(),
+        $defaults['config']
+    );
+
+    $query_args = array(
+        'post_type'      => $args['post_type'],
+        'posts_per_page' => (int) $args['posts_per_page'],
+        'post_status'    => $args['post_status'],
+        'orderby'        => $args['orderby'],
+        'order'          => $args['order'],
+    );
+
+    if (!empty($args['categories']) && is_array($args['categories'])) {
+        $query_args['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => array_map('sanitize_title', $args['categories']),
+                'operator' => 'IN',
+            ),
+        );
+    }
+
+    $query = new WP_Query($query_args);
+
+    return array(
+        'query'      => $query,
+        'config'     => $args['config'],
+        'categories' => $args['categories'],
+    );
 }
-add_shortcode('tienthemes_loop_post', 'tienthemes_loop_post_shortcode');
+
+
+// Function im show_category
+function tienthemes_category_links($categories = array())
+{
+    $post_categories = get_the_category();
+    if (empty($post_categories)) {
+        return '';
+    }
+
+    $cat_links = array();
+
+    foreach ($post_categories as $category) {
+        if (empty($categories) || in_array($category->slug, $categories, true)) {
+            $cat_links[] = '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+        }
+    }
+
+    return implode(', ', $cat_links);
+}

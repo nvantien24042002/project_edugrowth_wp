@@ -1881,7 +1881,7 @@ section.section_main li:first-of-type a {
   gap: 50px;
   padding-bottom: 40px;
 }
-.row3 .post_img {
+.row3 .post_img img {
   border-bottom: 12px solid #ff4d5d;
 }
 .row3 .post_content {
