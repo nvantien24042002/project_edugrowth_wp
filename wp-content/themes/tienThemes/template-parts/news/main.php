@@ -1,13 +1,17 @@
   <?php
+    $show_desc       = !empty($config['show_desc']);
+
     $args = array(
         'posts_per_page' => 6,
         'orderby'        => 'date',
         'post_status'    => 'publish',
+        'orderby' => "date",
         'order' => 'DESC',
         'config' => [
             'show_categories' => true,
             'show_desc' => true
         ],
+        // 'category__not_in' => array(15),
         'tax_query' => array(
             'relation' => 'AND',
             [
@@ -23,6 +27,7 @@
         )
     );
     $query = new WP_Query($args);
+
 
     ?>
   <section class="section_main">
@@ -110,11 +115,16 @@
                                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                               </div>
 
-                              <div class="card-desc">
-                                  <?php
 
-                                    ?>
-                              </div>
+                              <?php if ($show_desc) : ?>
+                                  <?php $card_desc = get_field('card_description'); ?>
+                                  <?php if (!empty($card_desc)) : ?>
+                                      <div class="card_desc">
+                                          <?php echo esc_html($card_desc); ?>
+                                      </div>
+                                  <?php endif; ?>
+                              <?php endif; ?>
+
 
                               <a href="<?php the_permalink(); ?>" class="link--icon">
                                   LEARN MORE <i class="fas fa-arrow-circle-right"></i>
@@ -190,13 +200,10 @@
               <div class="box-wrapper">
                   <div class="header-inner">
                       <h4 class="light-header">JOIN NOW</h4>
-                      <h2 class="main-header">Discover the Member Benefits</h2>
+                      <h2 class="main-header">Discover the <br> Member Benefits</h2>
                   </div>
                   <div class="content-inner">
-                      <p>
-                          Membership provides a range of benefits connected to your
-                          personal, professional and organisational goals
-                      </p>
+                      <p>Membership provides a range of benefits<br>connected to your personal, professional and<br>organisational goals</p>
                       <a href="" class="link--icon">LEARN MORE <i class="fa-solid fa-circle-right"></i></a>
                   </div>
               </div>
@@ -205,13 +212,10 @@
               <div class="box-wrapper">
                   <div class="header-inner">
                       <h4 class="light-header">JOIN NOW</h4>
-                      <h2 class="main-header">How to become a Member</h2>
+                      <h2 class="main-header">How to become <br> a Member</h2>
                   </div>
                   <div class="content-inner">
-                      <p>
-                          Join EduGrowth and help accelerate the Australian EdTech
-                          ecosystem across global stage
-                      </p>
+                      <p>Join EduGrowth and help accelerate the Australian<br>EdTech ecosystem across global stage</p>
                       <a href="" class="link--icon">LEARN MORE <i class="fa-solid fa-circle-right"></i></a>
                   </div>
               </div>

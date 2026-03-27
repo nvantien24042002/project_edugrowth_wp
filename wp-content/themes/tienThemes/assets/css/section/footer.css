@@ -50,6 +50,11 @@ ul.footer-menu a:hover {
   flex-direction: column;
   margin: 15px 60px;.footer-button
 } */
+div#footer-logo {
+  max-width: 200px;
+  height: auto;
+}
+
 .footer-button {
   display: flex;
   margin-bottom: 50px;
