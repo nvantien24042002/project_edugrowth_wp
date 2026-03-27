@@ -1,0 +1,254 @@
+/* CONTENT */
+section.section_main .light-heading {
+  font-size: 12px;
+}
+section.section_main .main-heading {
+  font-size: 38px;
+}
+section.section_main a {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+section.section_main .icon-inner:hover a {
+  text-decoration: none;
+  color: #666;
+}
+section.section_main .banner {
+  position: relative;
+}
+
+.banner img {
+  max-width: 100%;
+}
+
+section.section_main .banner .container {
+  width: 780px;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+}
+section.section_main h4.title {
+  display: inline-block;
+  background-color: #0c1332;
+  color: #fff;
+  font-size: 32px;
+  padding: 0px 15px;
+  margin-bottom: 15px;
+}
+
+section.section_main {
+  background-color: #f1f2f3;
+  padding: 57px 80px;
+}
+
+section.section_main .box-link {
+  padding: 27px 0px;
+}
+section.section_main .box-link ul {
+  border-bottom: 12px solid #ff3873;
+  padding-bottom: 10px;
+  list-style: none;
+  display: flex;
+}
+section.section_main .box-link li {
+  border-right: 2px solid;
+}
+
+section.section_main .box-link a {
+  margin: 0px 22px;
+  font-size: 32px;
+  color: #333;
+}
+section.section_main li:first-of-type a {
+  margin-left: 0px;
+}
+.section_main li:last-child a {
+  border-right: none;
+}
+
+/* section main */
+.section_main .row {
+  padding: 40px 0px;
+}
+.section_main .row1 {
+  display: flex;
+  gap: 40px;
+}
+.section_main .row1 .box-left {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2023/05/Amplification_Image_08-scaled-1.jpg")
+    center / cover no-repeat;
+  flex: 2;
+  display: flex;
+}
+.section_main .row1 .box-text {
+  padding: 45px 30px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+.section_main .row1 .box-right {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_01-scaled.jpg")
+    center / cover no-repeat;
+  flex: 1;
+}
+/* end row1 */
+
+/* row-2 */
+.row2 .list_card {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+.row2 .card_item {
+  flex-basis: calc(33.3333% - 40px);
+}
+.row2 .card_content {
+  padding: 20px 25px 0px;
+}
+.row2 .card_content .light-heading a {
+  margin-bottom: 10px;
+  color: #666;
+  text-transform: uppercase;
+}
+.row2 .card_content .main-heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.row2 .card_content .card-desc {
+  max-height: 5.1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.row2 .card_content .icon-inner a {
+  color: #555;
+}
+/* e row-2 */
+/* row 3 */
+.row3 .row3 ul.list_post {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.row3 li.post_item {
+  display: flex;
+  gap: 50px;
+  padding-bottom: 40px;
+}
+.row3 .post_img {
+  border-bottom: 12px solid #ff4d5d;
+}
+.row3 .post_content {
+  padding: 10px 25px 10px;
+  flex: 2;
+}
+.row3 .post_content a {
+  color: #555;
+}
+
+.row3 .post_content .light-heading {
+  margin-bottom: 10px;
+}
+.row3 .post_content .light-heading a {
+  text-transform: uppercase;
+}
+.row3 .post_content .light-heading a:hover {
+  text-decoration: none;
+}
+.row3 .post_content .main-heading {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.row3 .post_content .main-heading:hover {
+  color: #ff4d5d;
+}
+.row3 .post_content p {
+  font-size: 14px;
+}
+/* end row 3 */
+/* row 4 */
+
+.row4 ul.list_card {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+.row4 .box-wrapper {
+  padding: 45px 30px 15px;
+}
+.row4 .header-inner {
+  margin-bottom: 120px;
+}
+.row4 h2.main-header {
+  font-size: 38px;
+}
+.row4 .item_card_1 {
+  color: #fff;
+  background: url("https://edugrowth.org.au/wp-content/uploads/2025/10/Amplification_Image_CMYK_07-scaled.jpg")
+    center / cover no-repeat;
+  flex: 1;
+}
+.row4 .item_card_2 {
+  color: #fff;
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_08-scaled.jpg")
+    center / cover no-repeat;
+  flex: 1;
+}
+/* end row 4 */
+
+/* row 5 */
+.row5 .list_card {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+.row5 .card_item {
+  flex-basis: calc(33.3333% - 40px);
+}
+.row5 .card_img {
+  border-bottom: 12px solid #ff3873;
+}
+.row5 .card_content {
+  padding: 40px 25px 0px;
+}
+.row5 .card_content .light-heading a {
+  margin-bottom: 10px;
+  color: #666;
+  text-transform: uppercase;
+}
+.row5 .card_content .main-heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.row5 .card_content .icon-inner {
+  padding-top: 20px;
+}
+
+.row5 .card_content .icon-inner a {
+  color: #555;
+}
+.row5 .link--icon {
+  display: flex;
+  justify-content: space-between;
+}
+.row5 .link--icon a {
+  display: inline-flex;
+  align-items: center;
+  color: #555;
+}
+.row5 .link--icon i {
+  font-size: 25px;
+  margin-left: 10px;
+}
+.row5 .link--icon a:hover {
+  text-decoration: none;
+  color: #ff3873;
+}

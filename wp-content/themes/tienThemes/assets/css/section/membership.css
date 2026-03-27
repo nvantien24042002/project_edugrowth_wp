@@ -1,0 +1,54 @@
+/* section membership */
+section.section_membership {
+  background-color: #f1f2f3;
+  padding: 54px 80px 70px;
+}
+
+section.section_membership .box-head h4 {
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 27px 0px;
+}
+
+.section_membership ul.list_card_membership {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.section_membership .list_card {
+  flex: 1;
+  display: flex;
+}
+
+section.section_membership .list_card_1 {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_01-scaled.jpg")
+    center / cover no-repeat;
+}
+
+section.section_membership .list_card_2 {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_08-scaled.jpg")
+    center / cover no-repeat;
+}
+
+.section_membership .box-wrapper {
+  padding: 45px 30px 25px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section_membership .box-header {
+  padding-bottom: 120px;
+}
+
+.section_membership .box-content span {
+  display: block;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}

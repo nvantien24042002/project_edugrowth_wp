@@ -1,0 +1,115 @@
+/* === section_market ====*/
+.section_market {
+  padding: 54px 80px;
+  background-color: #fff;
+}
+
+section.section_market .box-head {
+  display: flex;
+  justify-content: space-between;
+}
+section.section_market .box-head .left {
+  flex: 2;
+}
+section.section_market .box-head .right {
+  flex: 1;
+  text-align: right;
+}
+.section_market .box-head h3 {
+  font-size: var(--h3-title);
+  margin-bottom: 20px;
+  color: #555;
+}
+.section_market .box-head p {
+  color: #666;
+}
+.section_market ul.list_card {
+  padding-top: 47px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.section_market a {
+  color: #333;
+}
+.section_market a:hover {
+  color: #ff3873;
+}
+.section_market li {
+  flex-basis: calc(33.3333% - 20px);
+}
+.section_market li img {
+  border-bottom: 10px solid #ff3873;
+}
+.section_market .card_content {
+  padding: 20px 25px 0px;
+}
+.section_market .card_content h4 {
+  line-height: 39px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.section_market .card_content h4:hover {
+  color: #ff3873;
+  cursor: pointer;
+}
+.section_market .view_all {
+  display: inline-flex;
+  align-items: center;
+  color: #666;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.section_market .view_all i {
+  position: relative;
+  font-size: 25px;
+  margin-left: 15px;
+}
+.section_market .view_all i::after {
+  content: "";
+  position: absolute;
+  background: #d8d4d4;
+  width: 64%;
+  height: 55%;
+  left: 18%;
+  top: 20%;
+  z-index: -1;
+}
+.section_market .view_all:hover {
+  color: #ff3873;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  color: #666;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.learn-more i {
+  position: relative;
+  margin-left: 15px;
+  font-size: 26px;
+  color: #fff;
+  z-index: 1;
+}
+.learn-more i::after {
+  content: "";
+  position: absolute;
+  background: #d8d4d4;
+  width: 64%;
+  height: 55%;
+  left: 18%;
+  top: 20%;
+  z-index: -1;
+}
+.learn-more:hover {
+  color: #ff3873;
+}
+
+.learn-more:hover i {
+  color: #ff3873;
+}

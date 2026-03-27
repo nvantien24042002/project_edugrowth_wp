@@ -1,0 +1,504 @@
+/* CONTENT */
+/* section__slider */
+.swiper {
+  width: 100%;
+  height: auto;
+}
+.swiper-slide {
+  position: relative;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide .box-text {
+  position: absolute;
+  max-width: 600px;
+  position: absolute;
+  max-width: 600px;
+  bottom: 10px;
+  left: 50px;
+}
+.swiper-slide .box-title {
+  padding-bottom: 40px;
+}
+.swiper-slide .box-content {
+  padding-bottom: 40px;
+}
+.swiper-slide .box-title h4 {
+  display: inline;
+  background: #0c1332;
+  color: #f5f5f5;
+  text-align: left;
+  box-shadow:
+    1em 0 0 #0c1332,
+    -1em 0 0 #0c1332;
+  font-size: 32px;
+}
+.swiper-slide .box-content p {
+  display: inline;
+  background: #0c1332;
+  color: #f5f5f5;
+  text-align: left;
+  font-size: 32px;
+  /* box-shadow:
+    1em 0 0 #0c1332,
+    -1em 0 0 #0c1332;
+  font-size: 32px; */
+}
+/* end section__slider */
+/* section-hero */
+section.section__hero {
+  padding: 55px 0px;
+}
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 80px;
+  padding: 28px 0px;
+}
+.hero__left {
+  flex-basis: 65%;
+}
+h3.hero__title {
+  margin-bottom: 28px;
+  font-size: 38px;
+  line-height: 1;
+  margin-right: 66px;
+}
+.hero__actions a {
+  display: inline-block;
+  text-decoration: none;
+  color: #666666;
+}
+.hero__actions .active {
+  color: #ff4d5d;
+}
+.hero__actions .active:hover {
+  color: #666;
+}
+.hero__icon {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.hero_right {
+  flex-basis: 35%;
+}
+
+.hero_right h3 {
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+/*======== insights =======*/
+
+section.section__insights {
+  padding: 54px 80px;
+}
+/* box-head */
+section.section__insights .box-head {
+  display: flex;
+}
+section.section__insights .box-left {
+  flex: 1;
+}
+section.section__insights .box-right {
+  flex: 1;
+  text-align: right;
+}
+
+/*  */
+.card_australian-edtech {
+  display: flex;
+  gap: 40px;
+}
+
+.card-left {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_06_Blue-mid-1.png")
+    center / cover no-repeat;
+  flex: 0 0 66%;
+  display: flex;
+  padding: 45px 30px 15px;
+  color: #fff;
+}
+.card_australian-edtech .box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-right {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2023/05/Amplification_Image_08-scaled-1.jpg")
+    center / cover no-repeat;
+  flex: 0 0 34%;
+  padding: 45px 30px 15px;
+  color: #fff;
+}
+
+.card_australian-edtech .box-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+/* list_news */
+.section__insights .list-news {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.section__insights .list-item {
+  flex-basis: calc(33.3333% - 50px);
+}
+/* end  insights*/
+
+/* our member */
+.hightlight {
+  position: relative;
+}
+
+.hightlight img {
+  max-width: 100%;
+}
+.hightlight::after {
+  content: "";
+  width: 100%;
+  height: 12px;
+  background: #ff3873;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.hightlight .container {
+  width: 780px;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+}
+.hightlight h4.title {
+  display: inline-block;
+  background-color: #0c1332;
+  color: #fff;
+  font-size: 32px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.hightlight p.content {
+  display: block;
+  font-size: 32px;
+  background-color: #0c1332;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.hightlight .container {
+  max-width: 780px;
+}
+
+.hightlight a {
+  text-decoration: none;
+  background: #ff3873;
+  border: 0.125rem solid #ff3873;
+  padding: 12px 30px;
+  color: #fff;
+  font-size: 14px;
+}
+.hightlight a .icon {
+  font-size: 10px;
+}
+/* end member */
+
+/* Focus */
+.focus {
+  margin: 0px 80px;
+  padding-top: 55px;
+}
+.focus .container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+/* .focus h4.title {
+  background-color: none;
+  text-align: center;
+} */
+
+h4.focus-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.focus-title strong {
+  font-size: 30px;
+}
+
+.focus-desc span {
+  font-size: 20px;
+}
+p.focus-desc {
+  text-align: center;
+  margin: 0px 50px 60px;
+}
+/* ===edtech=== */
+/* left */
+section.edtech {
+  margin: 0px 80px;
+  padding-bottom: 55px;
+}
+
+section.edtech .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.edtech .container .left {
+  max-width: 648px;
+}
+section.edtech .container .right {
+  max-width: 423px;
+}
+section.edtech .left h3 {
+  color: #e83e6c;
+  margin-bottom: 40px;
+}
+
+section.edtech .left p {
+  padding-bottom: 16px;
+}
+section.edtech .left a.btn-link {
+  text-decoration: none;
+  color: #2ea3f2;
+}
+/* right */
+.list-EdTech {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-EdTech .list-item {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-EdTech a {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.list-EdTech a:hover {
+  color: #ff3873;
+}
+
+.list-EdTech a::before {
+  content: "\f053";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-5px);
+
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.list-EdTech a:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Active item */
+.list-EdTech li:first-child a {
+  color: #ff3873;
+}
+
+.list-EdTech li:first-child a::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+/* end EdTech */
+/*===STRATEGIC PARTNERS=== */
+section.strategic-partners {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #fcfcfc;
+}
+section.strategic-partners .section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+section.strategic-partners .section-desc {
+  max-width: 480px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+section.strategic-partners .view-all {
+  margin-top: 33px;
+  text-align: right;
+  padding-right: 80px;
+}
+section.strategic-partners .view-all a {
+  text-decoration: none;
+  color: #555555;
+}
+
+section.strategic-partners .view-all a i {
+  margin-left: 15px;
+}
+
+section.strategic-partners i {
+  margin-left: 15px;
+}
+
+.partners-member {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.partners-member a {
+  flex-basis: 25%;
+  margin-bottom: 60px;
+  padding: 0px 15px;
+}
+
+.partners-member a img {
+  max-width: 128px;
+}
+/* ===RESOURSE=== */
+section.resources {
+  padding-top: 50px;
+}
+
+section.resources .container {
+  display: flex;
+  gap: 20px;
+}
+
+section.resources .left,
+section.resources .right {
+  position: relative;
+}
+
+section.resources .left {
+  flex: 0 0 66%;
+}
+
+section.resources .right {
+  flex: 0 0 33%;
+}
+
+.box-img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.section.resources .box-text {
+  position: absolute;
+  inset: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+.left .box-text {
+  max-width: 780px;
+}
+.right .box-text {
+  max-width: 380px;
+}
+.resources .light_heading {
+  font-size: 12px;
+}
+
+.resources .main_heading {
+  font-size: 38px;
+}
+
+.resources .link--icon {
+  font-size: 16px;
+  text-decoration: none;
+  color: #f5f5f5;
+}
+.resources .link--icon i {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+/* ===END RESOURSE=== */
+
+/* ====upcoming_events=== */
+
+section.upcoming_events {
+  padding: 50px 0px;
+}
+section.upcoming_events .container .heading {
+  display: flex;
+  justify-content: space-between;
+}
+section.upcoming_events .container .left h3 {
+  font-size: 36px;
+}
+section.upcoming_events .container .right a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 16px;
+}
+section.upcoming_events .container .right a i {
+  margin-left: 15px;
+}
+/* list even */
+.upcoming_events ul.list-event {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.upcoming_events .event-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upcoming_events .event-content {
+  padding: 20px;
+}
+
+.upcoming_events h4.event-title {
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.upcoming_events h4.event-title:hover {
+  color: #e83e6c;
+}
+.event-date {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.upcoming_events .event-content .link--icon {
+  text-decoration: none;
+  color: #666667;
+  font-weight: bold;
+}
+.upcoming_events .event-content .link--icon:hover {
+  color: #e83e6c;
+}
+/* ===end upcoming_events=== */

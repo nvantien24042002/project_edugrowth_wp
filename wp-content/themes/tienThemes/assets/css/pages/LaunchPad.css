@@ -1,0 +1,321 @@
+/* === CONTENT === */
+/* ---banner--- */
+section.section_banner {
+  position: relative;
+}
+section.section_banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+/* .section_banner .box-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+} */
+.section_banner .box-text .box-title {
+  background: #0c1332;
+  padding: 1px 20px;
+}
+.section_banner .box-text .box-title h3 {
+  font-size: 32px;
+  color: #fff;
+}
+/* end banner */
+/* section idea */
+section.section_idea {
+  padding: 54px 180px;
+}
+
+h4.heading-title {
+  padding: 35px 0px;
+  font-size: 30px;
+}
+
+section.section_idea .box-text {
+  display: flex;
+  gap: 88px;
+}
+
+section.section_idea .box-left {
+  flex-basis: calc(50%-88px);
+}
+
+section.section_idea p.para_1 {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+section.section_idea p.para_2 {
+  font-size: 16px;
+}
+
+section.section_idea .box-right p {
+  font-size: 16px;
+}
+/* end section idea */
+/*====section_card====*/
+section.section_card {
+  background: #f1f2f3;
+  padding: 54px 50px;
+}
+
+section.section_card .row_1 .row_1.row {
+}
+
+section.section_card .row_1 ul.list_card {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+section.section_card .row_1 li.item_card {
+  position: relative;
+  flex: 1;
+}
+section.section_card .row_1 .box-text {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  padding: 45px 30px 15px;
+}
+
+section.section_card .row_1 h4.light-header {
+  font-size: 12px;
+}
+
+section.section_card .row_1 h2.main-header {
+  font-size: 38px;
+  margin-bottom: 100px;
+}
+
+section.section_card .row_1 a.link--icon {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 20px 0px;
+}
+section.section_card .row_1 a.link--icon:hover {
+  color: #333;
+}
+
+/*row 2*/
+.row_2.row {
+  padding-top: 40px;
+}
+
+.row_2 ul {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+.row_2 .list_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 45px 30px 15px;
+  color: #fff;
+  gap: 20px;
+}
+.row_2 .list_card a {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+.row_2 .list_card_1 {
+  flex: 2;
+  background: url("https://edugrowth.org.au/wp-content/uploads/2025/10/Amplification_Image_CMYK_05-scaled.jpg")
+    center / cover no-repeat;
+}
+.row_2 .list_card_1 h2 {
+  font-size: 38px;
+}
+.row_2 li.list_card.list_card_2 {
+  flex: 1;
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_10_Blue.png")
+    center / cover no-repeat;
+}
+
+/* end row 2 */
+/* row 3 */
+.row_3.row {
+  padding: 40px 0px;
+}
+
+.row_3 ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+.row_3 .list_card_1 {
+  background-image: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_06_Blue-mid-1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+}
+.row_3 .list_card_2 {
+  background-image: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_08-scaled.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+}
+.row_3 .box-wrapper {
+  padding: 45px 30px 15px;
+  color: #fff;
+}
+
+.row_3 .box-header {
+  margin-bottom: 120px;
+}
+
+.row_3 h4.light-header {
+  font-size: 12px;
+}
+
+.row_3 h2.main-header {
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.row_3 .box-content {
+}
+.row_3 a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 0px;
+}
+
+/* end row 3 */
+
+/* section startup */
+section.section_startup {
+  padding: 54px 0px;
+}
+section.section_startup h4 {
+  font-size: 30px;
+}
+section.section_startup .box-head h4,
+section.section_startup .box-head p {
+  text-align: center;
+}
+
+section.section_startup .box-content {
+  display: flex;
+  gap: 100px;
+  padding: 50px 180px;
+  justify-content: space-between;
+}
+section.section_startup .box-left {
+  flex: 1;
+  padding: 10px 50px;
+}
+section.section_startup .box-right {
+  flex: 1;
+}
+section.section_startup .box-right p {
+  padding-bottom: 16px;
+}
+/* end section startup */
+
+/* section_entre_interview and section_launchpad-resources */
+.section_launchpad-resources {
+  background-color: #f1f2f3;
+}
+.section_entre_interview,
+.section_launchpad-resources {
+  padding: 54px 50px;
+}
+.section_entre_interview .box-head,
+.section_launchpad-resources .box-head {
+  display: flex;
+  justify-content: space-between;
+}
+.section_entre_interview .box-left {
+  flex: 2;
+}
+.section_entre_interview .box-right {
+  flex: 1;
+  text-align: right;
+}
+
+.section_entre_interview h3,
+.section_launchpad-resources h3 {
+  font-size: 38px;
+  padding-bottom: 20px;
+}
+.section_entre_interview p,
+.section_launchpad-resources p {
+  font-size: 18px;
+}
+.section_entre_interview .box-right,
+.section_launchpad-resources .box-right {
+}
+.section_entre_interview a,
+.section_launchpad-resources a {
+  display: inline-flex;
+  text-decoration: none;
+  color: #555;
+}
+.section_entre_interview a:hover,
+.section_launchpad-resources a:hover {
+  color: #ff3873;
+  cursor: pointer;
+}
+.section_entre_interview a i,
+.section_launchpad-resources a i {
+  margin-left: 10px;
+  font-size: 28px;
+}
+
+.section_entre_interview .list_card,
+.section_launchpad-resources .list_card {
+  list-style: none;
+  padding-top: 27px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.section_entre_interview li.card_item,
+.section_launchpad-resources li.card_item {
+  flex-basis: calc(33.3333% - 30px);
+}
+.section_entre_interview .card_img,
+.section_launchpad-resources .card_img {
+  border-bottom: 10px solid #ff3873;
+}
+.section_entre_interview .card_content,
+.section_launchpad-resources .card_content {
+  padding: 30px 20px;
+}
+.section_entre_interview .card_content h4,
+.section_launchpad-resources .card_content h4 {
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.section_launchpad-resources .box-left {
+  flex: 2;
+}
+.section_launchpad-resources .box-right {
+  text-align: right;
+  flex: 1;
+}
+
+.section_entre_interview .card_content h4:hover,
+.section_launchpad-resources .card_content h4:hover {
+  color: #ff3873;
+}
+
+.section_entre_interview .card_content .learn-more,
+.section_launchpad-resources .card_content .learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #555;
+}
+/* end .section_entre_interview and section_launchpad-resources */

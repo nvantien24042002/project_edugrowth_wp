@@ -1,0 +1,65 @@
+/* section events */
+.section_events {
+  padding: 54px 80px;
+}
+.section_events .box-head {
+  display: flex;
+  justify-content: space-between;
+}
+.section_events .box-left {
+  flex: 1;
+}
+.section_events .box-right {
+  flex: 1;
+  text-align: right;
+}
+
+.section_events .box-head h3 {
+  font-size: var(--h3-title);
+}
+.section_events a {
+  display: inline-flex;
+  text-decoration: none;
+  color: #555;
+}
+.section_events a i {
+  margin-left: var(--ml-icon);
+  font-size: var(--icon-size);
+}
+
+.section_events .box-content {
+  padding: 40px 0px;
+}
+
+.section_events ul.list_card {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+.section_events ul.list_card li {
+  flex-basis: calc(33.3333% - 30px);
+}
+.section_events .card_img img {
+  border-bottom: var(--bb-pink);
+}
+
+.section_events .card_content {
+  padding: 25px 20px 0px;
+}
+.section_events .card_content h4 {
+  font-size: var(--h4_title);
+  color: var(--h4-pink);
+  line-height: 40px;
+}
+.section_events .card_content h4:hover {
+  color: #5a5959;
+  cursor: pointer;
+}
+.section_events p.date {
+  padding: 15px 0px;
+}
+.section_events a:hover {
+  color: var(--pink-hover);
+}
+
+/* end section events */

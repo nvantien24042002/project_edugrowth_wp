@@ -1,0 +1,155 @@
+/* === CONTENT === */
+/* ---banner--- */
+section.section_banner {
+  position: relative;
+}
+section.section_banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.section_banner .box-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+}
+.section_banner .box-text .box-title {
+  background: #0c1332;
+  padding: 1px 20px;
+}
+.section_banner .box-text .box-title h3 {
+  font-size: 32px;
+  color: #fff;
+}
+/* end banner */
+
+/* section_services */
+
+section.section_services {
+  padding: 54px 0px;
+  margin: 0px 180px;
+}
+
+.section_services .box-head {
+  padding: 27px 0px;
+}
+.section_services h4 {
+  font-size: 30px;
+}
+
+.section_services .box-content {
+  display: flex;
+  gap: 80px;
+}
+
+.section_services .left {
+  flex: 1;
+}
+
+.section_services .right {
+  flex: 1;
+}
+/* section_services */
+
+/* section card */
+.section_card .row {
+  display: flex;
+  gap: 50px;
+  padding: 20px 0px;
+}
+.section_card {
+  padding: 54px 80px;
+  background: #f1f2f3;
+}
+.section_card .box-wrapper {
+  padding: 45px 30px 15px;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.section_card .box-head {
+  margin-bottom: 130px;
+}
+.section_card .light-heading {
+  font-size: 12px;
+}
+
+.section_card .main-heading {
+  font-size: 38px;
+}
+.section_card .box-content {
+}
+
+.section_card p {
+  margin-bottom: 10px;
+}
+
+.section_card a {
+  display: inline-flex;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+.section_card i {
+  font-size: 20px;
+  margin-left: 12px;
+}
+/* - row 1 - */
+.section_card .row_1 .left {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/shutterstock_680333869_pink.png")
+    center / cover no-repeat;
+  flex: 1;
+}
+.section_card .row_1 .right {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_06_Blue-mid-1.png")
+    center / cover no-repeat;
+  flex: 1;
+}
+/* - end row 1 -  */
+
+/* - row 2 - */
+.section_card .row_2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.section_card .row_2 .left {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Australian-EdTech-Directory-Crop-scaled-1.jpg")
+    center / cover no-repeat;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section_card .row_2 .left .box-img {
+  padding: 0px 20px;
+}
+/* .section_card .row_2 .right .box-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+.section_card .row_2 .right {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_10_Blue.png")
+    center / cover no-repeat;
+  flex: 1;
+}
+/* - end row 2 - */
+
+/* row 3 */
+.section_card .row_3 .left {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/shutterstock_680333869_purple.png")
+    center / cover no-repeat;
+  flex: 1;
+}
+.section_card .row_3 .right {
+  background: url("https://edugrowth.org.au/wp-content/uploads/2022/02/Amplification_Image_10_Blue.png")
+    center / cover no-repeat;
+  flex: 1;
+}
+
+/* end row 3 */
+/* end section card */
+
+/* === FOOTER === */
