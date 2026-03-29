@@ -267,72 +267,62 @@ add_shortcode('tienthemes_LaunchpadResource', 'tienthemes_LaunchpadResource_shor
 
 
 
-function tienthemes_get_posts_data($args = array())
+function tienthemes_get_posts_data($args = [])
 {
-    $defaults = array(
+    //  wp_parse_args dùng để kểt hợp mảng $args với mảng mặc định
+    $args = wp_parse_args($args, [
         'post_type'      => 'post',
-        'posts_per_page' => 8,
+        'posts_per_page' => 6,
         'post_status'    => 'publish',
         'orderby'        => 'date',
         'order'          => 'DESC',
-        'categories'     => array(),
-        'config'         => array(
-            'show_categories' => false,
-            'show_desc'       => false,
-        ),
-    );
+        'categories'     => [],
+        'config'         => [],
+    ]);
 
-    $args = wp_parse_args($args, $defaults);
+    $config = wp_parse_args($args['config'], [
+        'show_categories' => false,
+        'show_desc'       => false,
+    ]);
 
-    $args['config'] = wp_parse_args(
-        is_array($args['config']) ? $args['config'] : array(),
-        $defaults['config']
-    );
-
-    $query_args = array(
+    $query_args = [
         'post_type'      => $args['post_type'],
         'posts_per_page' => (int) $args['posts_per_page'],
         'post_status'    => $args['post_status'],
         'orderby'        => $args['orderby'],
         'order'          => $args['order'],
-    );
+    ];
 
-    if (!empty($args['categories']) && is_array($args['categories'])) {
-        $query_args['tax_query'] = array(
-            array(
+    if (!empty($args['categories'])) {
+        $query_args['tax_query'] = [
+            [
                 'taxonomy' => 'category',
                 'field'    => 'slug',
-                'terms'    => array_map('sanitize_title', $args['categories']),
-                'operator' => 'IN',
-            ),
-        );
+                'terms'    => array_map('sanitize_title', (array) $args['categories']),
+            ],
+        ];
     }
 
-    $query = new WP_Query($query_args);
-
-    return array(
-        'query'      => $query,
-        'config'     => $args['config'],
-        'categories' => $args['categories'],
-    );
+    return [
+        'query'      => new WP_Query($query_args),
+        'config'     => $config,
+        'categories' => (array) $args['categories'],
+    ];
 }
 
-
-// Function im show_category
-function tienthemes_category_links($categories = array())
+function tienthemes_category_links($allowed_categories = [])
 {
-    $post_categories = get_the_category();
-    if (empty($post_categories)) {
-        return '';
-    }
+    $links = [];
 
-    $cat_links = array();
-
-    foreach ($post_categories as $category) {
-        if (empty($categories) || in_array($category->slug, $categories, true)) {
-            $cat_links[] = '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+    foreach (get_the_category() as $category) {
+        if (empty($allowed_categories) || in_array($category->slug, $allowed_categories, true)) {
+            $links[] = sprintf(
+                '<a href="%s">%s</a>',
+                esc_url(get_category_link($category->term_id)),
+                esc_html($category->name)
+            );
         }
     }
 
-    return implode(', ', $cat_links);
+    return implode(', ', $links);
 }
