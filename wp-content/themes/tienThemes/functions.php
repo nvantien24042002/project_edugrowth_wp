@@ -279,7 +279,7 @@ function tienthemes_get_posts_data($args = [])
         'categories'     => [],
         'config'         => [],
     ]);
-
+    //  Gộp $config truyền vào với $config mặc định
     $config = wp_parse_args($args['config'], [
         'show_categories' => false,
         'show_desc'       => false,
