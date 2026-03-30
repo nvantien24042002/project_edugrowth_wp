@@ -1,0 +1,304 @@
+   .single-partner #header {
+    background:#fff;
+}
+
+   /* BANNER PARTNER */
+.section_banner-partner {
+    background: url('https://edugrowth.org.au/wp-content/uploads/2026/02/EdG-Members-Profile-Background.png') center / cover no-repeat;
+}
+
+.section_banner-partner .banner_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 80px;
+    margin: 40px 0px;
+}
+.section_banner-partner .banner-logo {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_banner-partner .member-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.section_banner-partner .member-name {
+    font-size: 52px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section_banner-partner .member-tagline {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+
+
+/* =========================
+   CONTENT PARTNER
+========================= */
+.section_content-partner {
+    display: flex;
+    gap: 58px;
+    padding: 50px 0;
+    margin: 0 80px;
+}
+
+.section_content-partner .sidebar {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+    background-color: #f1f2f3;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.section_content-partner .content {
+    flex: 1;
+}
+.section_content-partner .member-logo {
+    display: flex;
+    justify-content: center;
+}
+.section_content-partner .sidebar-member {
+    padding: 30px 25px;
+}
+
+.section_content-partner .partner-taxonomy {
+    margin-bottom: 10px;
+}
+
+.section_content-partner .partner-taxonomy__label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.section_content-partner .partner-taxonomy__item {
+    font-size: 14px;
+    color: #a5a5a5;
+    margin-bottom: 5px;
+}
+
+.section_content-partner a.partner-website {
+    color: #2ea3f2;
+}
+
+.section_content-partner a.partner-website:hover {
+    color: #717070a5;
+}
+
+.section_content-partner .member-social {
+    display: flex;
+    gap: 10px;
+    padding-left: 0;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.section_content-partner .social-item a {
+    color: #333;
+}
+
+.section_content-partner .social-item a i {
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.section_content-partner .social-item a:hover {
+    color: #2ea3f2;
+}
+
+
+.read_more_about {
+    padding: 50px 80px;
+}
+
+.read_more_about .read-more_title {
+    margin: 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.read_more_about .read-more-about_wrapper {
+    margin-top: 25px;
+}
+
+.read_more_about .list_card,
+.read_more_about .read-more-about_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+}
+
+.read_more_about .list_card li {
+    flex: 0 0 calc((100% - 50px) / 3);
+}
+
+.read_more_about .card_img {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.read_more_about .card_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 10px solid #ff3873;
+}
+
+.read_more_about .card_content {
+    padding: 20px 25px 25px;
+}
+
+.read_more_about .categories {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.read_more_about .card_content h4 {
+    margin: 0 0 12px;
+    font-size: 30px;
+    line-height: 1.3;
+}
+
+.read_more_about .card_content h4 a,
+.read_more_about .card_content h4 {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.read_more_about .card_content h4 a:hover,
+.read_more_about .card_content h4:hover {
+    color: #ff3873;
+    cursor: pointer;
+}
+
+.read_more_about .card_desc {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+    max-height: 4.2rem;
+    overflow: hidden;
+}
+
+.read_more_about a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.read_more_about a:hover {
+    color: #ff3873;
+}
+
+@media (max-width: 1024px) {
+    .section_banner-partner .banner_wrapper {
+        padding: 30px 20px;
+    }
+    .section_banner-partner .banner-text {
+        line-height: 1.2;
+    }
+    .section_banner-partner .member-name {
+        font-size: 42px;
+    }
+
+    .section_banner-partner .member-tagline {
+        font-size: 24px;
+    }
+
+    .section_banner-partner .member-logo {
+        padding: 0 20px;
+    }
+
+    .section_content-partner {
+        margin: 0 20px;
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .section_content-partner .sidebar {
+        flex: 0 0 32%;
+    }
+
+    .read_more_about {
+        padding: 40px 20px;
+    }
+
+    .read_more_about .list_card li {
+        flex: 0 0 calc((100% - 25px) / 2);
+    }
+
+    .read_more_about .card_content h4 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .banner_wrapper .banner-logo {
+        order: 1;
+    }
+    .banner-text {
+        order: 2;
+    }
+    .section_content-partner {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section_content-partner .sidebar,
+    .section_content-partner .content {
+        flex: 0 0 100%;
+    }
+
+    .read_more_about .list_card li {
+        flex-basis: 100%;
+    }
+
+    .section_banner-partner .banner_wrapper {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .section_banner-partner .member-name {
+        font-size: 36px;
+    }
+
+    .section_banner-partner .member-tagline {
+        font-size: 22px;
+    }
+    .read_more_about .list_card li {
+        flex: 0 0 100%;
+    }
+
+    .read_more_about .card_content {
+        padding: 18px 20px 20px;
+    }
+
+    .read_more_about .card_content h4 {
+        font-size: 22px;
+    }
+}

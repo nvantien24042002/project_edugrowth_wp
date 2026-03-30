@@ -46,6 +46,10 @@ ul.list_card .link--icon:hover i,
 ul.list_post .link--icon:hover i {
   color: #ff3873;
 }
+
+
+
+
 /* END GLOBAL ALL PAGE */
 
 /* ===== ABOUT.CSS ===== */
@@ -561,6 +565,7 @@ section.section_snapshot .box-body h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-bottom: none;
 }
 .section_encourage li.item-recommend .box {
   position: absolute;

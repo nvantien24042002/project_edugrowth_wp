@@ -1,45 +1,68 @@
-    <?php 
-    $taxonomy_info = get_taxonomy('education-sector');
-    $taxonomy_label = $taxonomy_info ? $taxonomy_info->label : '';
+<?php
+$taxonomies = get_object_taxonomies('partner', 'objects');
+$field_website = get_field('website');
+$field_social = get_field('social');
+// echo '<pre>';
+// print_r($field_social);
+// echo '</pre>';
+?>
+<section class="section_content-partner">
+    <div class="sidebar">
+        <div class="sidebar-member">
+            <?php foreach ($taxonomies as $taxonomy_slug => $taxonomy_obj) : ?>
+                <?php
+                $terms = get_the_terms(get_the_ID(), $taxonomy_slug);
+                if (!$terms || is_wp_error($terms)) {
+                    continue;
+                }
+                ?>
+                <div class="partner-taxonomy">
+                    <h4 class="partner-taxonomy__label">
+                        <?php echo esc_html($taxonomy_obj->labels->singular_name); ?>
+                    </h4>
 
-    $terms = get_the_terms( get_the_ID(), 'education-sector' );
-   ?>
-    <section class="section_content-partner">
-        <div class="sidebar">
-            <div class="sdebar-member">
-
-
-            <?php
-            if ( ! empty( $terms ) ) {
-                foreach ( $terms as $term ) {?>
-                <div class="member-infor">
-                    <h4><?php echo $term->label; ?></h4>
+                    <div class="partner-taxonomy__list">
+                        <?php foreach ($terms as $term) : ?>
+                            <div class="partner-taxonomy__item">
+                                <?php echo esc_html($term->name); ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-             <?php } ?>
-            <?php } ?>
+            <?php endforeach; ?>
 
-
-
-
-                <div class="member-connect">
-                    <!-- <h4>Conntact</h4> -->
-                    <a href="" class="mail-partner"></a>
-                    <ul class="member-social">
-                        <li><a href="" class="facebook"></a></li>
-                        <li><a href="" class="twitter"></a></li>
-                        <li><a href="" class="linkedin"></a></li>
-                    </ul>
-                </div>
-                
-
+            <div class="member-connect">
+                <h4>Contact</h4>
+                <a href="" class="partner-website">
+                    <?php echo esc_html($field_website); ?>
+                </a>
+            <ul class="member-social">
+                <?php
+                if (!empty($field_social) && is_array($field_social)) {
+                    foreach ($field_social as $key => $value) {
+                        if (!empty($value)) { ?>
+                            <li class="social-item">
+                                <a href="<?php echo esc_url($value); ?>" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-<?php echo esc_attr($key); ?>"></i>
+                                </a>
+                            </li>
+                        <?php } 
+                    }
+                } ?>
+            </ul>
             </div>
+
         </div>
-        <div class="content">
-            <div class="member-logo">
-                LOGO
-            </div>
-            <div class="member-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit auctor dui, sed efficitur ligula. Donec a nunc eget enim efficitur convallis. Sed at felis ac nisl efficitur efficitur. Donec in odio a enim efficitur convallis. Sed at felis ac nisl efficitur efficitur. Donec in odio a enim efficitur convallis.</p>
-            </div>
+    </div>
+
+    <div class="content">
+        <div class="member-logo">
+            <?php echo the_post_thumbnail('medium'); ?>
         </div>
-    </section>
+        <div class="member-description">
+            <p>
+                <?php the_content(); ?>
+            </p>
+        </div>
+    </div>
+</section>

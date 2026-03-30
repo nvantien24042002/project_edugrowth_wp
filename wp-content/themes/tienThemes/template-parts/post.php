@@ -103,9 +103,6 @@ $query = new WP_Query($query_args);
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php else : ?>
-                <li class="card_item">
-                    <p><?php esc_html_e('No market found.', 'tienthemes'); ?></p>
-                </li>
             <?php endif; ?>
         </ul>
     </div>

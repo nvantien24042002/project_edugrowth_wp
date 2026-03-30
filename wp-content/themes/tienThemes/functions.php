@@ -135,6 +135,12 @@ function tienthemes_enqueue_assets()
         array(),
         TIENTHEMES_VERSION
     );
+    wp_enqueue_style(
+        'partner-style',
+        TIENTHEMES_URI . '/assets/partner.css',
+        array(),
+        TIENTHEMES_VERSION
+    );
 
     wp_enqueue_style(
         'swiper-css',
@@ -267,40 +273,94 @@ add_shortcode('tienthemes_LaunchpadResource', 'tienthemes_LaunchpadResource_shor
 
 
 
+
+
 function tienthemes_get_posts_data($args = [])
 {
-    //  wp_parse_args dùng để kểt hợp mảng $args với mảng mặc định
     $args = wp_parse_args($args, [
         'post_type'      => 'post',
-        'posts_per_page' => -1,
+        'posts_per_page' => 6,
         'post_status'    => 'publish',
         'orderby'        => 'date',
         'order'          => 'DESC',
+
+        // category đơn giản
         'categories'     => [],
+        'category_mode'  => 'or', // or | and
+
+        // tax_query nâng cao truyền từ ngoài vào
+        'tax_query'      => [],
+
+        // config giao diện
         'config'         => [],
     ]);
-    //  Gộp $config truyền vào với $config mặc định
+
     $config = wp_parse_args($args['config'], [
         'show_categories' => false,
         'show_desc'       => false,
     ]);
 
     $query_args = [
-        'post_type'      => $args['post_type'],
-        'posts_per_page' => (int) $args['posts_per_page'],
-        'post_status'    => $args['post_status'],
-        'orderby'        => $args['orderby'],
-        'order'          => $args['order'],
+        'post_type'           => $args['post_type'],
+        'posts_per_page'      => (int) $args['posts_per_page'],
+        'post_status'         => $args['post_status'],
+        'orderby'             => $args['orderby'],
+        'order'               => $args['order'],
+        'ignore_sticky_posts' => true,
     ];
 
+    $tax_query = [];
+
+    // 1. Nếu có categories thì tự build tax_query
     if (!empty($args['categories'])) {
-        $query_args['tax_query'] = [
-            [
+        $categories = array_map('sanitize_title', (array) $args['categories']);
+
+        // mode AND: bài phải có tất cả category
+        if ($args['category_mode'] === 'and') {
+            $tax_query['relation'] = 'AND';
+
+            foreach ($categories as $category_slug) {
+                $tax_query[] = [
+                    'taxonomy' => 'category',
+                    'field'    => 'slug',
+                    'terms'    => [$category_slug],
+                ];
+            }
+        } else {
+            // mode OR: bài thuộc 1 trong các category
+            $tax_query[] = [
                 'taxonomy' => 'category',
                 'field'    => 'slug',
-                'terms'    => array_map('sanitize_title', (array) $args['categories']),
-            ],
-        ];
+                'terms'    => $categories,
+                'operator' => 'IN',
+            ];
+        }
+    }
+
+    // 2. Nếu có tax_query truyền từ ngoài vào thì gộp thêm
+    if (!empty($args['tax_query']) && is_array($args['tax_query'])) {
+        // Nếu tax_query ngoài có relation thì giữ lại
+        if (isset($args['tax_query']['relation'])) {
+            $external_relation = $args['tax_query']['relation'];
+            unset($args['tax_query']['relation']);
+
+            if (!isset($tax_query['relation'])) {
+                $tax_query['relation'] = $external_relation;
+            }
+        }
+
+        foreach ($args['tax_query'] as $item) {
+            $tax_query[] = $item;
+        }
+    }
+
+    // 3. Gắn tax_query vào WP_Query
+    if (!empty($tax_query)) {
+        if (!isset($tax_query['relation']) && count($tax_query) > 1) {
+            $tax_query['relation'] = 'AND';
+        }
+
+        $query_args['tax_query'] = $tax_query;
     }
 
     return [
@@ -310,14 +370,20 @@ function tienthemes_get_posts_data($args = [])
     ];
 }
 
+
 function tienthemes_category_links($allowed_categories = [])
 {
     $links = [];
+    $post_categories = get_the_category();
 
-    foreach (get_the_category() as $category) {
+    if (empty($post_categories) || is_wp_error($post_categories)) {
+        return '';
+    }
+
+    foreach ($post_categories as $category) {
         if (empty($allowed_categories) || in_array($category->slug, $allowed_categories, true)) {
             $links[] = sprintf(
-                '<a href="%s">%s</a>',
+                '<a href="%s" class="category-item">%s</a>',
                 esc_url(get_category_link($category->term_id)),
                 esc_html($category->name)
             );
