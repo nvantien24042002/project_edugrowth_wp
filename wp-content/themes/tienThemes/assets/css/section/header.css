@@ -24,7 +24,7 @@ a:hover {
   width: 100%;
   z-index: 1000;
 
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 .container {
   max-width: 1360px;

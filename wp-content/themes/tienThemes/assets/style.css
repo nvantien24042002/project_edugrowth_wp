@@ -1984,3 +1984,7 @@ section.section_main li:first-of-type a {
   font-weight: 700;
   margin-bottom: 10px;
 }
+
+.row5 .main-heading a {
+  color: #333;
+}

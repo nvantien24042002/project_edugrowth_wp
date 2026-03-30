@@ -272,7 +272,7 @@ function tienthemes_get_posts_data($args = [])
     //  wp_parse_args dùng để kểt hợp mảng $args với mảng mặc định
     $args = wp_parse_args($args, [
         'post_type'      => 'post',
-        'posts_per_page' => 6,
+        'posts_per_page' => -1,
         'post_status'    => 'publish',
         'orderby'        => 'date',
         'order'          => 'DESC',

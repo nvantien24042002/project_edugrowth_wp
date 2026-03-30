@@ -18,6 +18,16 @@ $all_posts = $query->posts;
 $row2_posts = array_slice($all_posts, 0, 6);
 $row3_posts = array_slice($all_posts, 6, 2);
 
+
+
+// Data news
+$news_query = new WP_Query(array(
+    'posts_per_page' => 6,
+    'category_name'  => 'news',
+    'post_status'    => 'publish',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+) );
 ?>
 <section class="section_main">
     <div class="box-link">
@@ -191,24 +201,47 @@ $row3_posts = array_slice($all_posts, 6, 2);
     </div>
     <div class="row row5">
         <ul class="list_card">
+            <?php if ($news_query->have_posts()) : ?>
+                <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
             <li class="card_item">
                 <div class="card_img">
-                    <a href="">
+                    <a href="<?php the_permalink(); ?>">
                         <img
-                            src="https://edugrowth.org.au/wp-content/uploads/2025/11/Strategic-Partnership-e1763511125847-400x250.png"
+                            src="<?php echo get_the_post_thumbnail_url(); ?>"
                             alt="" />
                     </a>
                 </div>
                 <div class="card_content">
                     <div class="main-heading">
-                        EduGrowth welcomes a new partnership with EdTech New
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </div>
-                    <a href="" class="link--icon">LEARN MORE
+                    <a href="<?php the_permalink(); ?>" class="link--icon">LEARN MORE
                         <i class="fas fa-arrow-circle-right"></i>
                     </a>
 
                 </div>
             </li>
+            <?php endwhile; ?>
+            <?php endif; ?>
+
+        </ul>
+        <div class="link--icon-right">
+            <div class="left">
+                <p></p>
+            </div>
+            <div class="right">
+                <a href="">
+                    VIEW ALL
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 
+
             <li class="card_item">
                 <div class="card_img">
                     <a href="">
@@ -298,19 +331,5 @@ $row3_posts = array_slice($all_posts, 6, 2);
                         <i class="fas fa-arrow-circle-right"></i>
                     </a>
                 </div>
-            </li>
-        </ul>
-
-        <div class="link--icon-right">
-            <div class="left">
-                <p></p>
-            </div>
-            <div class="right">
-                <a href="">
-                    VIEW ALL
-                    <i class="fa-solid fa-circle-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+            </li> 
+-->
