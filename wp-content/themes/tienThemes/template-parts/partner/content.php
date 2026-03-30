@@ -9,7 +9,9 @@ $field_social = get_field('social');
 <section class="section_content-partner">
     <div class="sidebar">
         <div class="sidebar-member">
-            <?php foreach ($taxonomies as $taxonomy_slug => $taxonomy_obj) : ?>
+            <?php foreach ($taxonomies as $taxonomy_slug => $taxonomy_obj) : 
+                // echo $taxonomy_slug;
+                ?>
                 <?php
                 $terms = get_the_terms(get_the_ID(), $taxonomy_slug);
                 if (!$terms || is_wp_error($terms)) {
@@ -26,6 +28,14 @@ $field_social = get_field('social');
                             <div class="partner-taxonomy__item">
                                 <?php echo esc_html($term->name); ?>
                             </div>
+                            <?php if($taxonomy_slug === 'founder'): ?>
+                                <?php $linkedin = get_field('linkedin', $term); ?>
+                                <?php if (!empty($linkedin)) : ?>
+                                    <a href="<?php echo esc_url($linkedin); ?>" target="_blank" rel="noopener noreferrer" class="partner-taxonomy__linkedin">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -36,20 +46,20 @@ $field_social = get_field('social');
                 <a href="" class="partner-website">
                     <?php echo esc_html($field_website); ?>
                 </a>
-            <ul class="member-social">
-                <?php
-                if (!empty($field_social) && is_array($field_social)) {
-                    foreach ($field_social as $key => $value) {
-                        if (!empty($value)) { ?>
-                            <li class="social-item">
-                                <a href="<?php echo esc_url($value); ?>" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-<?php echo esc_attr($key); ?>"></i>
-                                </a>
-                            </li>
-                        <?php } 
-                    }
-                } ?>
-            </ul>
+                <ul class="member-social">
+                    <?php
+                    if (!empty($field_social) && is_array($field_social)) {
+                        foreach ($field_social as $key => $value) {
+                            if (!empty($value)) { ?>
+                                <li class="social-item">
+                                    <a href="<?php echo esc_url($value); ?>" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-brands fa-<?php echo esc_attr($key); ?>"></i>
+                                    </a>
+                                </li>
+                            <?php } 
+                        }
+                    } ?>
+                </ul>
             </div>
 
         </div>
