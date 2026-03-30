@@ -1868,6 +1868,16 @@ section.section_main li:first-of-type a {
 .row2 .card_content .icon-inner a {
   color: #555;
 }
+.row2 .card_desc {
+  max-height:4.3rem;
+  overflow:hidden;
+}
+.row2 .link--icon {
+  margin-top:20px;
+}
+
+
+
 /* e row-2 */
 /* row 3 */
 .row3 .row3 ul.list_post {

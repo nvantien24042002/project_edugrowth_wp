@@ -21,15 +21,18 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// // // event click menu
-// const links = document.querySelectorAll(".header-menu a");
-// links.forEach((link) => {
-//   link.addEventListener("click", function (e) {
-//     links.forEach((r) => r.classList.remove("is-active"));
-//     this.classList.add("is-active");
-//     e.preventDefault();
-//   });
-// });
+// event scroll menu
+window.addEventListener('scroll', () => {
+    const activeLi = document.querySelector('.header-menu li.current-menu-item');
+
+    if (activeLi) {
+        if (window.scrollY > 100) {
+            activeLi.classList.add('is-scrolled');
+        } else {
+            activeLi.classList.remove('is-scrolled');
+        }
+    }
+});
 
 // event click bars
 const bars = document.querySelector(".bars");
