@@ -41,20 +41,14 @@
     color: #fff;
     letter-spacing: 2px;
 }
-
-
-
-
-/* =========================
-   CONTENT PARTNER
-========================= */
+/*MAIN CONTENT */
 .section_content-partner {
     display: flex;
     gap: 58px;
     padding: 50px 0;
     margin: 0 80px;
 }
-
+/* sidebar */
 .section_content-partner .sidebar {
     flex: 0 0 25%;
     display: flex;
@@ -63,14 +57,6 @@
     background-color: #f1f2f3;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
-
-.section_content-partner .content {
-    flex: 1;
-}
-.section_content-partner .member-logo {
-    display: flex;
-    justify-content: center;
 }
 .section_content-partner .sidebar-member {
     padding: 30px 25px;
@@ -119,6 +105,35 @@
 .section_content-partner .social-item a:hover {
     color: #2ea3f2;
 }
+/* end sidebar */
+
+
+/* content */
+.section_content-partner .content {
+    flex: 1;
+}
+.section_content-partner .member-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.section_content-partner .content .member_video {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.section_content-partner .content .member_video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* end content */
+
 
 
 .read_more_about {

@@ -2,6 +2,7 @@
 $taxonomies = get_object_taxonomies('partner', 'objects');
 $field_website = get_field('website');
 $field_social = get_field('social');
+$field_video = get_field('video');
 // echo '<pre>';
 // print_r($field_social);
 // echo '</pre>';
@@ -74,5 +75,10 @@ $field_social = get_field('social');
                 <?php the_content(); ?>
             </p>
         </div>
+        <?php if(!empty($field_video)) { ?>
+            <div class="member_video">
+                <?php echo $field_video; ?>
+            </div>
+        <?php } ?>
     </div>
 </section>
