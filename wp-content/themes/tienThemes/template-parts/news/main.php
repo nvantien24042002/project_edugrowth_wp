@@ -11,7 +11,6 @@ $data = tienthemes_get_posts_data(array(
 $query = $data['query'];
 $config = $data['config'];
 $categories = $data['categories'];
-
 $show_categories = !empty($config['show_categories']);
 $show_desc = !empty($config['show_desc']);
 
