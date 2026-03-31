@@ -6,6 +6,7 @@ get_header();
     <?php get_template_part('template-parts/partner/banner'); ?>
     <?php get_template_part('template-parts/partner/content'); ?>
     <?php get_template_part("template-parts/partner/read_more");?>
+    <?php get_template_part("template-parts/partner/more_member");?>
 </div>
 <?php
 get_footer();

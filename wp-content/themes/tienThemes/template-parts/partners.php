@@ -1,7 +1,7 @@
 <?php
 $partner_query = new WP_Query([
     'post_type'      => 'partner',
-    'posts_per_page' => -1,
+    'posts_per_page' => 15,
     'post_status'    => 'publish',
     'order' => 'ASC',
 ]);
@@ -21,7 +21,6 @@ $partner_query = new WP_Query([
         </a>
     </div>
     <div class="list-logo">
-
         <!-- 1 -->
         <?php if ($partner_query->have_posts()):
             while ($partner_query->have_posts()): $partner_query->the_post();

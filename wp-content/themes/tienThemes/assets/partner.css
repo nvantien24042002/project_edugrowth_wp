@@ -117,6 +117,10 @@
     justify-content: center;
 }
 
+.section_content-partner .member-description p{
+    margin-bottom: 15px;
+}
+
 .section_content-partner .content .member_video {
     margin-top: 20px;
     position: relative;
@@ -228,7 +232,40 @@
 .read_more_about a:hover {
     color: #ff3873;
 }
+/* ====== MORE MEMBER ====== */
 
+.more_member {
+    margin-bottom: 50px;
+}
+.more_member-title {
+    font-size: 30px;
+    text-align: center;
+}
+.more_member .list-logo {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0px 15px;
+    justify-content: space-between;
+}
+
+.more_member .list-item {
+    flex: 0 0 calc(25% - 30px);
+    padding: 20px;
+}
+
+.more_member .list-item img {
+    object-fit: contain;
+    max-width: 8rem;
+    max-height: 5rem;
+}
+.more_member .list-item:hover {
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ====== END MORE MEMBER ===== */
 @media (max-width: 1024px) {
     .section_banner-partner .banner_wrapper {
         padding: 30px 20px;
@@ -269,10 +306,21 @@
     .read_more_about .card_content h4 {
         font-size: 24px;
     }
+
+    .more_member .more_member-title {
+        font-size: 24px;
+    }
+    .more_member .list-item {
+        flex: 0 0 calc(50% - 15px);
+    }
+    .more_member .list-item:hover {
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
 }
 
 @media (max-width: 768px) {
-
     .banner_wrapper .banner-logo {
         order: 1;
     }
@@ -317,4 +365,28 @@
     .read_more_about .card_content h4 {
         font-size: 22px;
     }
+    .read_more_about .card_content h4 {
+        font-size: 29px;
+    }
+
+    .more_member .more_member-title {
+        font-size: 24px;
+    }
+    .more_member .list-logo {
+        margin: 30px 30px;
+
+    }
+    .more_member .list-item {
+        flex-basis: 100%;
+        padding: 30px 50px;
+    }
+    .more_member .list-item:hover {
+        background: #fff;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    }
+    .more_member .list-item img {
+        max-width: 100%;
+    }
+
 }
+
