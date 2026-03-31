@@ -46,12 +46,12 @@
 .section_events .card_content {
   padding: 25px 20px 0px;
 }
-.section_events .card_content h4 {
+.section_events .card_content h4 a {
   font-size: var(--h4_title);
   color: var(--h4-pink);
   line-height: 40px;
 }
-.section_events .card_content h4:hover {
+.section_events .card_content h4:hover a {
   color: #5a5959;
   cursor: pointer;
 }
@@ -63,5 +63,12 @@
 }
 .section_events p {
   margin-top: 10px;
+}
+.start {
+  font-weight: 700;
+}
+.event-btn {
+  margin-top: 10px;
+  font-weight: 700;
 }
 /* end section events */

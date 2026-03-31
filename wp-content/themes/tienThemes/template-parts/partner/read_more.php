@@ -10,7 +10,7 @@ $tax_query = [
 ];
 
 $args = [
-    'posts_per_page' => -1,
+    'posts_per_page' => 3,
     'categories'     => [],
     'category_mode'  => 'or',
     'config'         => [

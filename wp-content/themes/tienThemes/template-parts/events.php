@@ -8,10 +8,10 @@ $args = [
     'order'          => 'ASC',
     'meta_query' => array(
         array(
-            'key'     => 'date', // The meta key for your custom field
+            'key'     => 'date',
             'value'   => $today,
-            'compare' => '>=',             // Compare as "greater than or equal to"
-            'type'    => 'DATE',           // Tell WordPress to compare the values as dates
+            'compare' => '>=',            
+            'type'    => 'DATE',         
         ),
     ),
 
@@ -24,7 +24,7 @@ $events_query = new WP_Query($args);
     <section class="section_events">
         <div class="box-head">
             <div class="box-left">
-                <h3>UPCOMING EVENTS</h3>
+                <h3><?php echo is_front_page() ? "UPCOMING EVENTS" : "EVENTS"; ?></h3>
                 <p></p>
             </div>
             <div class="box-right">
@@ -45,6 +45,13 @@ $events_query = new WP_Query($args);
                         $start = $time['start'];
                         $end   = $time['end'];
                         $place = get_field('place');
+                        $button_type = get_field('button_type');
+                        $button_link = get_field('button_link');
+                        $button_text = 'LEARN MORE';
+                        if ($button_type === 'learn_register') {
+                            $button_text = 'LEARN MORE & REGISTER';
+                        }
+                        $final_link = !empty($button_link) ? $button_link : get_permalink();
                         // echo $place;
                     ?>
                         <li class="card_item">
@@ -74,7 +81,9 @@ $events_query = new WP_Query($args);
                                     <?php echo esc_html($place) ?>
                                 </p>
 
-                                <a href="<?php the_permalink(); ?>">LEARN MORE</a>
+                                <a class="event-btn" href="<?php echo esc_url($final_link); ?>">
+                                    <?php echo esc_html($button_text); ?>
+                                </a>
                             </div>
                         </li>
                     <?php endwhile; ?>

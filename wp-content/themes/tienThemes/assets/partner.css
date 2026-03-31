@@ -1,8 +1,10 @@
-   .single-partner #header {
-    background:#fff;
+.single-partner #header {
+    background: #fff;
 }
 
-   /* BANNER PARTNER */
+/* =========================
+   BANNER PARTNER
+========================= */
 .section_banner-partner {
     background: url('https://edugrowth.org.au/wp-content/uploads/2026/02/EdG-Members-Profile-Background.png') center / cover no-repeat;
 }
@@ -12,8 +14,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 40px 80px;
-    margin: 40px 0px;
+    margin: 40px 0;
 }
+
 .section_banner-partner .banner-logo {
     width: 150px;
     height: 150px;
@@ -27,27 +30,32 @@
     height: 100%;
     object-fit: contain;
 }
+
 .section_banner-partner .member-name {
+    margin-bottom: 20px;
     font-size: 52px;
-    color: #fff;
     line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 20px;
+    color: #fff;
 }
 
 .section_banner-partner .member-tagline {
-    font-size: 30px;
     margin-bottom: 10px;
-    color: #fff;
+    font-size: 30px;
     letter-spacing: 2px;
+    color: #fff;
 }
-/*MAIN CONTENT */
+
+/* =========================
+   MAIN CONTENT
+========================= */
 .section_content-partner {
     display: flex;
     gap: 58px;
     padding: 50px 0;
     margin: 0 80px;
 }
+
 /* sidebar */
 .section_content-partner .sidebar {
     flex: 0 0 25%;
@@ -58,6 +66,7 @@
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
+
 .section_content-partner .sidebar-member {
     padding: 30px 25px;
 }
@@ -67,14 +76,14 @@
 }
 
 .section_content-partner .partner-taxonomy__label {
-    font-size: 20px;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .section_content-partner .partner-taxonomy__item {
+    margin-bottom: 5px;
     font-size: 14px;
     color: #a5a5a5;
-    margin-bottom: 5px;
 }
 
 .section_content-partner a.partner-website {
@@ -88,8 +97,8 @@
 .section_content-partner .member-social {
     display: flex;
     gap: 10px;
-    padding-left: 0;
     margin-top: 10px;
+    padding-left: 0;
     list-style: none;
 }
 
@@ -105,30 +114,30 @@
 .section_content-partner .social-item a:hover {
     color: #2ea3f2;
 }
-/* end sidebar */
-
 
 /* content */
 .section_content-partner .content {
     flex: 1;
 }
+
 .section_content-partner .member-logo {
     display: flex;
     justify-content: center;
 }
 
-.section_content-partner .member-description p{
+.section_content-partner .member-description p {
     margin-bottom: 15px;
 }
 
 .section_content-partner .content .member_video {
-    margin-top: 20px;
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
     height: 0;
+    margin-top: 20px;
+    padding-bottom: 56.25%;
     overflow: hidden;
 }
+
 .section_content-partner .content .member_video iframe {
     position: absolute;
     inset: 0;
@@ -136,10 +145,9 @@
     height: 100%;
 }
 
-/* end content */
-
-
-
+/* =========================
+   READ MORE ABOUT
+========================= */
 .read_more_about {
     padding: 50px 80px;
 }
@@ -147,8 +155,8 @@
 .read_more_about .read-more_title {
     margin: 0;
     font-size: 30px;
-    text-transform: uppercase;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .read_more_about .read-more-about_wrapper {
@@ -165,10 +173,10 @@
 }
 
 .read_more_about .list_card li {
-    flex: 0 0 calc((100% - 5px) / 3);
+    flex: 0 0 calc((100% - 4px) / 3);
     padding: 20px;
-    background: #f1f2f3;
     margin-bottom: 5px;
+    background: #f1f2f3;
 }
 
 .read_more_about .card_img {
@@ -205,15 +213,15 @@
     overflow: hidden;
 }
 
-.read_more_about .card_content h4 a,
-.read_more_about .card_content h4 {
+.read_more_about .card_content h4,
+.read_more_about .card_content h4 a {
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.read_more_about .card_content h4 a:hover,
-.read_more_about .card_content h4:hover {
+.read_more_about .card_content h4:hover,
+.read_more_about .card_content h4 a:hover {
     color: #ff3873;
     cursor: pointer;
 }
@@ -235,47 +243,72 @@
 .read_more_about a:hover {
     color: #ff3873;
 }
-/* ====== MORE MEMBER ====== */
 
+/* =========================
+   MORE MEMBER
+========================= */
 .more_member {
+    position: relative;
     margin-bottom: 50px;
 }
-.more_member-title {
+
+.more_member .more_member-title {
     font-size: 30px;
     text-align: center;
 }
+
 .more_member .list-logo {
-    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    padding: 0px 15px;
-    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 15px;
 }
 
 .more_member .list-item {
-    flex: 0 0 calc(25% - 30px);
+    position: relative;
+    flex: 0 0 calc((100% - 90px) / 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
     padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.more_member .list-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .more_member .list-item img {
-    object-fit: contain;
+    display: block;
+    width: 100%;
     max-width: 8rem;
     max-height: 5rem;
-}
-.more_member .list-item:hover {
-    background: #fff;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    height: auto;
+    object-fit: contain;
 }
 
-/* ====== END MORE MEMBER ===== */
+.more_member .list-item:hover {
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/*<= 1024px*/
 @media (max-width: 1024px) {
     .section_banner-partner .banner_wrapper {
         padding: 30px 20px;
     }
+
     .section_banner-partner .banner-text {
         line-height: 1.2;
     }
+
     .section_banner-partner .member-name {
         font-size: 42px;
     }
@@ -289,11 +322,19 @@
     }
 
     .section_content-partner {
-        margin: 0 20px;
         gap: 30px;
         padding: 40px 0;
+        margin: 0 20px;
+    }
+    .read_more_about {
+        position: relative;
+        z-index: 1;
     }
 
+    .more_member {
+        position: relative;
+        z-index: 9999;
+    }
     .section_content-partner .sidebar {
         flex: 0 0 32%;
     }
@@ -303,13 +344,9 @@
     }
 
     .read_more_about .list_card li {
-        flex: 0 0 calc((100% - 5px) / 2);
-        padding: 20px;
-        background: #f1f2f3;
+        flex: 0 0 calc((100% - 2px) / 2);
     }
-    .read_more_about a:hover {
-        color: #ff3873;
-    }
+
     .read_more_about .card_content h4 {
         font-size: 24px;
     }
@@ -317,23 +354,40 @@
     .more_member .more_member-title {
         font-size: 24px;
     }
-    .more_member .list-item {
-        flex: 0 0 calc(50% - 15px);
+
+    .more_member .list-logo {
+        gap: 20px;
     }
-    .more_member .list-item:hover {
-    background: #fff;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+    .more_member .list-item {
+        flex: 0 0 calc((100% - 40px) / 3);
+    }
 }
 
-}
-
+/*<= 768px */
 @media (max-width: 768px) {
-    .banner_wrapper .banner-logo {
+    .section_banner-partner .banner_wrapper {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .section_banner-partner .banner_wrapper .banner-logo {
         order: 1;
     }
-    .banner-text {
+
+    .section_banner-partner .banner_wrapper .banner-text {
         order: 2;
     }
+
+    .section_banner-partner .member-name {
+        font-size: 36px;
+    }
+
+    .section_banner-partner .member-tagline {
+        font-size: 22px;
+    }
+
     .section_content-partner {
         flex-direction: column;
         gap: 30px;
@@ -345,28 +399,9 @@
     }
 
     .read_more_about .list_card li {
-        flex-basis: 100%;
-    }
-
-    .section_banner-partner .banner_wrapper {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .section_banner-partner .member-name {
-        font-size: 36px;
-    }
-
-    .section_banner-partner .member-tagline {
-        font-size: 22px;
-    }
-    .read_more_about .list_card li {
         flex: 0 0 100%;
     }
-    .read_more_about a:hover {
-        color: #ff3873;
-    }
+
     .read_more_about .card_content {
         padding: 18px 20px 20px;
     }
@@ -374,25 +409,52 @@
     .read_more_about .card_content h4 {
         font-size: 22px;
     }
-    .read_more_about .card_content h4 {
-        font-size: 29px;
-    }
 
     .more_member .more_member-title {
         font-size: 24px;
     }
+
     .more_member .list-logo {
-        margin: 30px 30px;
-
+        gap: 15px;
     }
+
     .more_member .list-item {
-        flex-basis: 100%;
-        padding: 20px 30px;
+        flex: 0 0 calc((100% - 15px) / 2);
+        min-height: 100px;
+        padding: 16px;
+        z-index: 2;
     }
-    /* .more_member .list-item:hover {
-        background: #fff;
-        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-    } */
 
+    .more_member .list-item a {
+        position: relative;
+        z-index: 3;
+    }
 }
 
+/* <= 480px*/
+@media (max-width: 480px) {
+    .section_banner-partner .member-name {
+        font-size: 28px;
+    }
+
+    .section_banner-partner .member-tagline {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .section_content-partner {
+        margin: 0 15px;
+    }
+
+    .read_more_about {
+        padding: 30px 15px;
+    }
+
+    .read_more_about .read-more_title {
+        font-size: 24px;
+    }
+
+    .more_member .list-item {
+        flex: 0 0 100%;
+    }
+}
