@@ -283,16 +283,10 @@ function tienthemes_get_posts_data($args = [])
         'post_status'    => 'publish',
         'orderby'        => 'date',
         'order'          => 'DESC',
-
-        // category đơn giản
         'categories'     => [],
-        'category_mode'  => 'or', // or | and
-
-        // tax_query nâng cao truyền từ ngoài vào
         'tax_query'      => [],
-
-        // config giao diện
         'config'         => [],
+        'post_ids'       => [],
     ]);
 
     $config = wp_parse_args($args['config'], [
@@ -306,68 +300,21 @@ function tienthemes_get_posts_data($args = [])
         'post_status'         => $args['post_status'],
         'orderby'             => $args['orderby'],
         'order'               => $args['order'],
-        'ignore_sticky_posts' => true,
     ];
-
-    $tax_query = [];
-
-    // 1. Nếu có categories thì tự build tax_query
-    if (!empty($args['categories'])) {
-        $categories = array_map('sanitize_title', (array) $args['categories']);
-
-        // mode AND: bài phải có tất cả category
-        if ($args['category_mode'] === 'and') {
-            $tax_query['relation'] = 'AND';
-
-            foreach ($categories as $category_slug) {
-                $tax_query[] = [
-                    'taxonomy' => 'category',
-                    'field'    => 'slug',
-                    'terms'    => [$category_slug],
-                ];
-            }
-        } else {
-            // mode OR: bài thuộc 1 trong các category
-            $tax_query[] = [
-                'taxonomy' => 'category',
-                'field'    => 'slug',
-                'terms'    => $categories,
-                'operator' => 'IN',
-            ];
-        }
+      if (!empty($args['post_ids']) && is_array($args['post_ids'])) {
+        $query_args['post__in'] = array_map('intval', $args['post_ids']);
+        $query_args['orderby']  = 'post__in';
     }
-
-    // 2. Nếu có tax_query truyền từ ngoài vào thì gộp thêm
-    if (!empty($args['tax_query']) && is_array($args['tax_query'])) {
-        // Nếu tax_query ngoài có relation thì giữ lại
-        if (isset($args['tax_query']['relation'])) {
-            $external_relation = $args['tax_query']['relation'];
-            unset($args['tax_query']['relation']);
-
-            if (!isset($tax_query['relation'])) {
-                $tax_query['relation'] = $external_relation;
-            }
-        }
-
-        foreach ($args['tax_query'] as $item) {
-            $tax_query[] = $item;
-        }
+    if($args['tax_query']){
+        $query_args['tax_query'] = $args['tax_query'];
     }
-
-    // 3. Gắn tax_query vào WP_Query
-    if (!empty($tax_query)) {
-        if (!isset($tax_query['relation']) && count($tax_query) > 1) {
-            $tax_query['relation'] = 'AND';
-        }
-
-        $query_args['tax_query'] = $tax_query;
-    }
-
+   
     return [
         'query'      => new WP_Query($query_args),
         'config'     => $config,
-        'categories' => (array) $args['categories'],
+        'categories' => $args['categories'] ?? [],
     ];
+
 }
 
 
