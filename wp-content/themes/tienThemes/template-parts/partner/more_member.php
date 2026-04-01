@@ -5,6 +5,9 @@ $member_query = new WP_Query([
     'post_status'    => 'publish',
     'order' => 'DESC',
 ]);
+// echo "<pre>";
+// print_r($member_query);
+// echo "</pre>";
 ?>
 <section class="more_member">
     <h4 class="more_member-title">EXPLORE MORE MEMBERS</h4>

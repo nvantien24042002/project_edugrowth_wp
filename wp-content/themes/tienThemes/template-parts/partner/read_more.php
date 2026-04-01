@@ -28,12 +28,6 @@ $default_args = [
         'show_desc'       => true,
     ],
 ];
-
-echo '<pre>';
-echo 'Partner slug: ' . esc_html($partner_slug) . '<br>';
-print_r($tax_query);
-echo '</pre>';
-
 $data  = tienthemes_get_posts_data($args);
 $query = $data['query'];
 

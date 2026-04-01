@@ -1,10 +1,10 @@
 <?php
 $today = date('Y-m-d');
 $args = [
-    'post_type'      => 'post',
-    'posts_per_page' => 3,
+    'post_type'      => 'event',
+    'posts_per_page' => -1,
     'post_status'    => 'publish',
-    'category_name' => 'events',
+    // 'category_name' => 'events',
     'order'          => 'ASC',
     'meta_query' => array(
         array(

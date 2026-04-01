@@ -42,10 +42,7 @@
   color: #f5f5f5;
   text-align: left;
   font-size: 32px;
-  /* box-shadow:
-    1em 0 0 #0c1332,
-    -1em 0 0 #0c1332;
-  font-size: 32px; */
+
 }
 /* end section__slider */
 /* section-hero */
@@ -502,3 +499,7 @@ section.upcoming_events .container .right a i {
   color: #e83e6c;
 }
 /* ===end upcoming_events=== */
+
+@media (max-width:1024px) {
+  
+}
