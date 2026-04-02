@@ -1,6 +1,5 @@
 
 <?php
-$today = date('Y-m-d');
 $args = [
     'post_type'      => 'event',
     'posts_per_page' => -1,
@@ -9,7 +8,6 @@ $args = [
     'meta_query' => array(
         array(
             'key'     => 'date',
-            'value'   => $today,
             'compare' => '>=',            
             'type'    => 'DATE',         
         ),

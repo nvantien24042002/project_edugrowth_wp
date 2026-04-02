@@ -20,7 +20,6 @@ window.addEventListener("scroll", function () {
     headerScroll.classList.remove("scroll");
   }
 });
-
 // event scroll menu
 window.addEventListener('scroll', () => {
     const activeLi = document.querySelector('.header-menu li.current-menu-item');

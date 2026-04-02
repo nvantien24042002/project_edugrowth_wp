@@ -2,13 +2,18 @@
     background-color: #ffffff;
     border-bottom: 5px solid #ff3387;
 }
+.single-event #header .is-b-none  {
+    border-bottom: none;
+}
 .banner {
-    padding: 50px;
+    padding: 55px 0px;
     display: flex;
     gap: 20px;
 }
 .banner-left {
     flex: 1;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 .banner-left .title {
     font-size: 52px;
@@ -26,10 +31,14 @@
     align-items: center;
 }
 
-.content {
+.section-event-content {
     padding: 50px;
     background-color: #fcfcfc;
 }
-.content p {
+.section-event-content p {
     padding-bottom: 20px;
+}
+.section-event-content a {
+    text-decoration: none;
+    color: rgb(2, 155, 237);
 }
