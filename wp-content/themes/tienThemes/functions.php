@@ -141,6 +141,12 @@ function tienthemes_enqueue_assets()
         array(),
         TIENTHEMES_VERSION
     );
+    wp_enqueue_style(
+        'events_style',
+        TIENTHEMES_URI . '/assets/events.css',
+        array(),
+        TIENTHEMES_VERSION
+    );
 
     wp_enqueue_style(
         'swiper-css',

@@ -4,7 +4,6 @@ $args = [
     'post_type'      => 'event',
     'posts_per_page' => -1,
     'post_status'    => 'publish',
-    // 'category_name' => 'events',
     'order'          => 'ASC',
     'meta_query' => array(
         array(
@@ -14,7 +13,6 @@ $args = [
             'type'    => 'DATE',         
         ),
     ),
-
 ];
 
 $events_query = new WP_Query($args);

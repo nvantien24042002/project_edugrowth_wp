@@ -1084,6 +1084,7 @@ section.section__insights .box-right {
 
 .hightlight img {
   max-width: 100%;
+  border-bottom: 12px solid #ff3873;
 }
 .hightlight::after {
   content: "";

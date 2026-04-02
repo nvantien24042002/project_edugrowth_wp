@@ -1,0 +1,35 @@
+.single-event #header .container  {
+    background-color: #ffffff;
+    border-bottom: 5px solid #ff3387;
+}
+.banner {
+    padding: 50px;
+    display: flex;
+    gap: 20px;
+}
+.banner-left {
+    flex: 1;
+}
+.banner-left .title {
+    font-size: 52px;
+    line-height: 1.0;
+    padding-bottom: 20px;
+    font-weight: 700;
+    color: #555;
+}
+.banner-left .date {
+    margin-bottom: 15px;
+}
+.banner_right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    padding: 50px;
+    background-color: #fcfcfc;
+}
+.content p {
+    padding-bottom: 20px;
+}
